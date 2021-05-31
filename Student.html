@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #form {
+            display: flex;
+            padding: 5%;
+            flex-direction: column;
+            width: 300px;
+            border: 1px solid black;
+            width: 200px;
+            height: 450px;
+        }
+
+        #form>input {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #form>button {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #all {
+            width: 990px;
+            height: 580px;
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid black;
+            float: right;
+            margin-top: -585px;
+        }
+
+        #all>div {
+            flex-basis: 30%;
+            margin: 5%;
+            flex-direction: row;
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+        }
+
+        .res {
+            padding: 5%;
+            font-size: 10px;
+        }
+
+        .new {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form">
+        <input type="text" id="name" placeholder="name" />
+        <input type="number" id="age" placeholder="age" />
+        <input type="text" id="city" placeholder="city" />
+        <input type="number" id="contact number" placeholder="contact number" />
+        <input type="img" id="image" placeholder="image" />
+        <button type="submit" id="add">Add User</button>
+
+    </div>
+    <div id="all"></div>
+</body>
+
+</html>
+<script>
+    var count = 0;
+    var ind = document.getElementsByTagName('add')
+    console.log(ind);
+    add.addEventListener("click", ans)
+
+    function ans() {
+        count++;
+        var name = document.getElementById('name').value;
+        var age = document.getElementById('age').value;
+        var city = document.getElementById('city').value;
+        var contactNumber = document.getElementById('contact number').value;
+        var img = document.getElementById('image').value;
+        var h4 = document.createElement('div');
+        var div = document.getElementById('all');
+        h4.innerHTML = `<div id="${count}" class="res">
+            <h3>${name}</h3>
+            <h3>${age}</h3>
+            <h3>${city}</h3>
+            <h3>${contactNumber}</h3>
+            <h3>${img}</h3/>
+            <button id="remove${count}" id ="this.parentNode.parentNode.remove(this.parentNode.parentNode)">Remove</button>
+            <button id="update${count}" id = "date(${count}" class="new">Update</button>
+            </div>`
+
+        div.appendChild(h4);
+    }
+    function date(count) {
+        var str = "name" + count;
+        var name = document.getElementById('str');
+        var new_name = prompt("Enter new name");
+    }
+</script>
